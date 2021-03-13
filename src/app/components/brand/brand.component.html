@@ -1,0 +1,25 @@
+<!-- <div class="table-responsive-sm">
+  <p class="center"><strong>{{title}}</strong></p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Marka Adı</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{brand.id}}</td>
+        <td>{{brand.brandName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<div class="list-group">
+  <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+    Tümü
+  </button>
+  <button *ngFor="let brand of brands" type="button"
+    class="list-group-item list-group-item-action">{{brand.brandName}}</button>
+
+</div>

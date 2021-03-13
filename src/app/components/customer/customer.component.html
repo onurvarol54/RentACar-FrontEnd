@@ -1,0 +1,19 @@
+<div class="table-responsive-sm">
+  <p class="center"><strong>{{title}}</strong></p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User Id</th>
+        <th>Company Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{customer.id}}</td>
+        <td>{{customer.userId}}</td>
+        <td>{{customer.companyName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
