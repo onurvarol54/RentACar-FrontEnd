@@ -1,0 +1,38 @@
+<div>
+  <p class="center"><strong>Car Photos</strong></p>
+  <ngb-carousel *ngIf="photos">
+    <ng-template *ngFor="let carImage of photos let i = index" ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="{{imageUrl}}{{carImage.imagePath}}" class="d-block w-100" width="800" height="400"
+          alt="carImage.carId">
+      </div>
+    </ng-template>
+
+  </ngb-carousel>
+
+</div>
+<div *ngIf="carDetail" class="table-responsive-sm">
+  <p class="center"><strong>{{title}}</strong></p>
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th>Marka</th>
+        <th>Model Adı</th>
+        <th>Renk</th>
+        <th>Model Yılı</th>
+        <th>Fiyat</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{carDetail.brandName}}</td>
+        <td>{{carDetail.descriptions}}</td>
+        <td>{{carDetail.colorName}}</td>
+        <td>{{carDetail.modelYear}}</td>
+        <td>{{carDetail.dailyPrice}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

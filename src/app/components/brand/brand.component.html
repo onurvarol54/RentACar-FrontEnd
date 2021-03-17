@@ -15,11 +15,16 @@
     </tbody>
   </table>
 </div> -->
-<div class="list-group">
-  <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-    Tümü
-  </button>
-  <button *ngFor="let brand of brands" type="button"
-    class="list-group-item list-group-item-action">{{brand.brandName}}</button>
 
+<div *ngIf="dataLoaded == false" class="text-center">
+  <div class="spinner-border text-dark" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
 </div>
+<ul *ngIf="dataLoaded == true" class="list-group">
+  <li routerLink="/cars" (click)="removeCurrentBrand()" [ngClass]="getAllCurrentBrandClass()" aria-current="true">Brands
+  </li>
+  <li (click)="setCurrentBrand(brand)" [ngClass]="getCurrentBrandClass(brand)" routerLink="/brandDetail/{{brand.id}}"
+    *ngFor="let brand of brands">
+    {{brand.brandName}}</li>
+</ul>

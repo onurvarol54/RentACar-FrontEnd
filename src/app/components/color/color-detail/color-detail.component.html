@@ -1,0 +1,30 @@
+<div *ngIf="dataLoaded == false" class="text-center">
+  <div class="spinner-border text-dark" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div *ngIf="colorCars" class="table-responsive-sm">
+  <p class="center"><strong>{{title}}</strong></p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Renk</th>
+        <th>Marka</th>
+        <th>Model Adı</th>
+        <th>Model Yılı</th>
+        <th>Fiyat</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let colorCar of colorCars">
+        <td>{{colorCar.colorName}}</td>
+        <td>{{colorCar.brandName}}</td>
+        <td>{{colorCar.descriptions}}</td>
+        <td>{{colorCar.modelYear}}</td>
+        <td>{{colorCar.dailyPrice}}</td>
+        <td><button routerLink="/carDetail/{{colorCar.id}}" type="button" class="btn btn-info">Detay</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
